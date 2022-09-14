@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>ANY WORK :: INFO UPDATE</title>
+
+  <!-- Bootstrap core CSS-->
+  <link href="../../../dashboard_public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template-->
+
+  <link rel="stylesheet" href="../../../dashboard_public/vendor/fontawesome-free/css/all.min.css">
+  <!-- Page level plugin CSS-->
+
+  <!-- Custom styles for this template-->
+  <link href="../../../dashboard_public/css/sb-user.css" rel="stylesheet">
+
+  <style>
+    .card {
+      margin-top: 2em;
+      padding: 1.5em 0.5em 0.5em;
+      border-radius: 2em;
+      text-align: center;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 65%;
+      border-radius: 50%;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card .card-title {
+      font-weight: 700;
+      font-size: 1.5em;
+    }
+
+    .card .btn {
+      border-radius: 2em;
+      background-color: teal;
+      color: #ffffff;
+      padding: 0.5em 1.5em;
+    }
+
+    .card .btn:hover {
+      background-color: rgba(0, 128, 128, 0.7);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="/users/dashboard">Menu</a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navbar Search -->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+
+    </form>
+
+
+  </nav>
+  <div id="wrapper_two">
+  </div>
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/users/dashboard">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/users/update-info">
+          <i class="fas fa-address-card"></i>
+          <span>Update Information</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/photo-library">
+          <i class="fas fa-address-card"></i>
+          <span>Photo Library</span>
+        </a>
+      </li> 
+
+      <li class="nav-item">
+        <a class="nav-link" href="/users/logout">
+          <i class="fa fa-sign-out-alt"></i>
+          <span>Logout</span></a>
+      </li>
+    </ul>
+
+    <div id="content-wrapper">
+      <!-- /.container-fluid -->
+      <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+              <div class="card shadow-2-strong card-registration" style="border-radius: 15px">
+                <div class="card-body p-4 p-md-5">
+                  <!-- <h3 class="mb-4 pb-2 pb-md-0 mb-md-5"></h3> -->
+                  <form action="/users/update-info" method="POST">
+
+                    <div class="pl-lg-4">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="form-control-label" for="name">Full Name</label>
+                            <input type="text" id="name" name="user_name" class="form-control form-control-alternative"
+                              placeholder="Kwame Boagye Gideon" required />
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="form-control-label" for="dob">DOB</label>
+                            <input type="date" id="dob" name="dob" class="form-control form-control-alternative"
+                              required />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="form-control-label" for="gender">Gender</label>
+                            <select class="form-control" id="gender" name="gender" required>
+                              <option>Male</option>
+                              <option>Female</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="form-control-label" for="prof">Profession</label>
+                            <select class="form-control" id="prof" name="profession" required>
+                              <option value="building_constuctor">Building Constructor</option>
+                              <option value="painter">Painter</option>
+                              <option value="carpenter">Carpenter</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+
+                      </div >
+                      <hr class="my-4" />
+
+                      <div class="row">
+
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="form-control-label" for="region">Region</label>
+                            <select class="form-control" id="region" name="region" required>
+
+                              <option value="Ahafo">Ahafo</option>
+                              <option value="Ashanti">Ashanti</option>
+                              <option value="Bono East">Bono East</option>
+                              <option value="Bono">Bono</option>
+                              <option value="Central">Central</option>
+                              <option value="Eastern">Eastern</option>
+                              <option value="Greater Accra">Greater Accra</option>
+                              <option value="North East">North East</option>
+                              <option value="Northern">Northern</option>
+                              <option value="Oti">Oti</option>
+                              <option value="Savannah">Savannah</option>
+                              <option value="Upper East">Upper East</option>
+                              <option value="Upper West">Upper West</option>
+                              <option value="Volta">Volta</option>
+                              <option value="Western North">Western Noth</option>
+                              <option value="Western">Western</option>
+
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group focused">
+                            <label class="form-control-label" for="town">Town/City</label>
+                            <select class="form-control" id="town" name="town_city" required>
+                              <option value="Kukuom">Kukuom</option>
+                              <option value="Kenyasi">Kenyasi</option>
+                              <option value="Hwidiem">Hwidiem</option>
+                              <option value="Atebubu">Atebubu</option>
+                              <option value="Goaso">Goaso</option>
+                              <option value=Banda Ahenkro">Banda Ahenkro</option>
+                              <option value="Berekum">Berekum</option>
+                              <option value="Wamfie">Wamfie</option>
+                              <option value="Dormaa Ahenkro">Dormaa Ahenkro</option>
+                              <option value="Nkrankwanta">Nkrankwanta</option>
+                              <option value="Sampa">Sampa</option>
+                              <option value="New Drobo">New Drobo</option>
+                              <option value="Kintampo">Kintampo</option>
+                              <option value="Jema">Jema</option>
+                              <option value="Busunya">Busunya</option>
+                              <option value="Nkoranza">Nkoranza</option>
+                              <option value="Yeji">Yeji</option>
+                              <option value="Kwame Danso">Kwame Danso</option>
+                              <option value="Kajaji">Kajaji</option>
+                              <option value="Sunyani">Sunyani</option>
+                              <option value="Odumasi">Odumasi</option>
+                              <option value="Nsawkaw">Nsawkaw</option>
+                              <option value="Duayaw Nkwanta">Duayaw Nkwanta</option>
+                              <option value="Bechem">Bechem</option>
+                              <option value="Techiman">Techiman</option>
+                              <option value="Tuobodom">Tuobodom</option>
+                              <option value="Wenchi">Wenchi</option>
+                              <option value="Fomena">Fomena</option>
+                              <option value="New Edubiase">New Edubiase</option>
+                              <option value="Kodie">Kodie</option>
+                              <option value="Tepa">Tepa</option>
+                              <option value="Mankraso">Mankraso</option>
+                              <option value="Jacobu">Jacobu</option>
+                              <!-- <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option> -->
+                            </select>
+                          </div>
+                        </div>
+                      <hr class="my-4" />
+
+
+
+                        <div class="col-lg-12">
+                          <div class="form-group focused">
+                            <label class="form-control-label" for="district">District</label>
+                            <select class="form-control" id="district" name="district" required>
+                              <option value="Asunafo South District">Asunafo South District</option>
+                              <option value="Asutifi District">Asutifi District</option>
+                              <option value="Asutifi South District">Asutifi South District</option>
+                              <option value="Atebubu-Amantin District">Atebubu-Amantin District</option>
+                              <option value="Asunafo North Municipal District">Asunafo North Municipal District</option>
+                              <option value="Banda District">Banda District</option>
+                              <option value="Berekum Municipal District">Berekum Municipal District</option>
+                              <option value="Dormaa East District">Dormaa East District</option>
+                              <option value="Dormaa Municipal District">Dormaa Municipal District</option>
+                              <option value="Dormaa West District">Dormaa West District</option>
+                              <option value="Jaman North District">Jaman North District</option>
+                              <option value="Jaman South District">Jaman South District</option>
+                              <option value="Kintampo North Municipal District">Kintampo North Municipal District</option>
+                              <option value="Kintampo South District">Kintampo South District</option>
+                              <option value="Nkoranza North District">Nkoranza North District</option>
+                              <option value="Nkoranza South Municipal District">Nkoranza South Municipal District</option>
+                              <option value="Pru District">Pru District</option>
+                              <option value="Sene District">Sene District</option>
+                              <option value="Sene West District">Sene West District</option>
+                              <option value="Sunyani Municipal District">Sunyani Municipal District</option>
+                              <option value="Sunyani West District">Sunyani West District</option>
+                              <option value="Tain District">Tain District</option>
+                              <option value="Tano North District">Tano North District</option>
+                              <option value="Tano South District">Tano South District</option>
+                              <option value="Techiman Municipal District">Techiman Municipal District</option>
+                              <option value="Techiman North District">Techiman North District</option>
+                              <option value="Wenchi Municipal District">Wenchi Municipal District</option>
+                              <option value="Adansi North District">Adansi North District</option>
+                              <option value="Adansi South District">Adansi South District</option>
+                              <option value="Afigya-Kwabre District">Afigya-Kwabre District</option>
+                              <option value="Ahafo Ano North District">Ahafo Ano North District</option>
+                              <option value="Ahafo Ano South District">Ahafo Ano South District</option>
+                              <option value="Amansie Central District">Amansie Central District</option>
+                              <!-- <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option>
+                              <option value=""></option> -->
+                            </select>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+
+                    <hr class="my-4" />
+                    <h3>Chose Your Business Type</h3>
+                    <input type="radio" id="individual" name="groupings" value="individual" class="form-check-input">
+                    <label for="individual" class="form-check-label">Individual</label>
+                    <input type="radio" id="company" name="groupings" value="company">
+                    <label for="company">Company</label><br>
+                    <input type="radio" id="estate" name="groupings" value="estate">
+                    <label for="estate">Estate Developers</label><br>                  
+                    <input type="radio" id="team" name="groupings" value="team">
+                    <label for="team">Team</label><br>
+                    
+
+                    <div class="form-group">
+
+                      <hr class="my-4" />
+                      <div class="pl-lg-4">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group focused">
+                              <label class="form-control-label" for="address">Address</label>
+                              <input id="address" name="address" class="form-control form-control-alternative"
+                                placeholder="Address" type="text" required />
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group focused">
+                              <label class="form-control-label" for="business_name">Name Of Business</label>
+                              <input id="business_name" name="business_name" class="form-control form-control-alternative"
+                                placeholder="God's Power Construction" type="text" required />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+
+                          <div class="col-lg-12">
+                            <div class="form-group focused">
+                              <label class="form-control-label" for="contact">Phone Contact</label>
+                              <input type="text" id="contact" name="user_phone"
+                                class="form-control form-control-alternative" placeholder="0209143451" required />
+                            </div>
+
+                            <div class="form-group focused">
+                              <label class="form-control-label" for="alternate-contact">Alternate Phone Contact</label>
+                              <input type="text" id="alternte-contact" name="user_phone_a"
+                                class="form-control form-control-alternative" placeholder="0557497045" />
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <button type="submit" class="btn btn-primary btn-block">
+                        UPDATE INFO
+                      </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Sticky Footer -->
+    <footer class="sticky-footer">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright © My School 2022</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../../dashboard_public/vendor/jquery/jquery.min.js"></script>
+  <script src="../../../dashboard_public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../../dashboard_public/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+
+
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../../dashboard_public/js/sb-user.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+
+  
+
+</body>
+
+</html>

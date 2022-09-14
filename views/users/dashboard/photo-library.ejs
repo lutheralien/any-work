@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+  <title>ANY WORK :: PHOTO LIBRARY</title>
+
+  <!-- Bootstrap core CSS-->
+  <link href="../../../dashboard_public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template-->
+
+  <link rel="stylesheet" href="../../../dashboard_public/vendor/fontawesome-free/css/all.min.css">
+  <!-- Page level plugin CSS-->
+
+  <!-- Custom styles for this template-->
+  <link href="../../../dashboard_public/css/sb-user.css" rel="stylesheet">
+
+<style>
+  /* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+::selection{
+  color: #fff;
+  background: #6990F2;
+}
+.wrapper{
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
+}
+.wrapper header{
+  color: #6990F2;
+  font-size: 27px;
+  font-weight: 600;
+  text-align: center;
+}
+.wrapper form{
+  height: 167px;
+  display: flex;
+  cursor: pointer;
+  margin: 30px 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed #6990F2;
+}
+form :where(i, p){
+  color: #6990F2;
+}
+form i{
+  font-size: 50px;
+}
+form p{
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+section .row{
+  margin-bottom: 10px;
+  background: #E9F0FF;
+  list-style: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section .row i{
+  color: #6990F2;
+  font-size: 30px;
+}
+section .details span{
+  font-size: 14px;
+}
+.progress-area .row .content{
+  width: 100%;
+  margin-left: 15px;
+}
+.progress-area .details{
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+.progress-area .content .progress-bar{
+  height: 6px;
+  width: 100%;
+  margin-bottom: 4px;
+  background: #fff;
+  border-radius: 30px;
+}
+.content .progress-bar .progress{
+  height: 100%;
+  width: 0%;
+  background: #6990F2;
+  border-radius: inherit;
+}
+.uploaded-area{
+  max-height: 232px;
+  overflow-y: scroll;
+}
+.uploaded-area.onprogress{
+  max-height: 150px;
+}
+.uploaded-area::-webkit-scrollbar{
+  width: 0px;
+}
+.uploaded-area .row .content{
+  display: flex;
+  align-items: center;
+}
+.uploaded-area .row .details{
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}
+.uploaded-area .row .details .size{
+  color: #404040;
+  font-size: 11px;
+}
+.uploaded-area i.fa-check{
+  font-size: 16px;
+}
+
+</style>
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="/users/dashboard">Menu</a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navbar Search -->
+    <!-- <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+
+    </form> -->
+
+
+  </nav> 
+  <div id="wrapper_two">
+  </div>
+  <div id="wrapper">
+
+    
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/users/dashboard">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/update-info">
+          <i class="fas fa-address-card"></i>
+          <span>Update Information</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/users/photo-library">
+          <i class="fas fa-address-card"></i>
+          <span>Photo Library</span>
+        </a>
+      </li> 
+
+      <li class="nav-item">
+        <a class="nav-link" href="/users/logout">
+          <i class="fa fa-sign-out-alt"></i>
+          <span>Logout</span></a>
+      </li>
+    </ul> 
+
+    <div id="content-wrapper">
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Add To Photo Library
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Upload Photos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="wrapper">
+          <header>Upload Photos</header>
+          <form action="#">
+            <input class="file-input" type="file" name="file" hidden>
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Browse File to Upload</p>
+          </form>
+          <section class="progress-area"></section>
+          <section class="uploaded-area"></section>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <h6>You Can Only Upload a maximum of ten(10) Photos</h6>
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    </div>
+    <!-- Sticky Footer -->
+    <footer class="sticky-footer">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright © My School 2022</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../../dashboard_public/vendor/jquery/jquery.min.js"></script>
+  <script src="../../../dashboard_public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../../dashboard_public/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+
+
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../../dashboard_public/js/sb-user.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+
+  <script>
+const form = document.querySelector("form"),
+fileInput = document.querySelector(".file-input"),
+progressArea = document.querySelector(".progress-area"),
+uploadedArea = document.querySelector(".uploaded-area");
+
+// form click event
+form.addEventListener("click", () =>{
+  fileInput.click();
+});
+
+fileInput.onchange = ({target})=>{
+  let file = target.files[0]; //getting file [0] this means if user has selected multiple files then get first one only
+  if(file){
+    let fileName = file.name; //getting file name
+    if(fileName.length >= 12){ //if file name length is greater than 12 then split it and add ...
+      let splitName = fileName.split('.');
+      fileName = splitName[0].substring(0, 13) + "... ." + splitName[1];
+    }
+    uploadFile(fileName); //calling uploadFile with passing file name as an argument
+  }
+}
+
+// file upload function
+function uploadFile(name){
+  let xhr = new XMLHttpRequest(); //creating new xhr object (AJAX)
+  xhr.open("POST", "/users/photo-library"); //sending post request to the specified URL
+  xhr.upload.addEventListener("progress", ({loaded, total}) =>{ //file uploading progress event
+    let fileLoaded = Math.floor((loaded / total) * 100);  //getting percentage of loaded file size
+    let fileTotal = Math.floor(total / 1000); //gettting total file size in KB from bytes
+    let fileSize;
+    // if file size is less than 1024 then add only KB else convert this KB into MB
+    (fileTotal < 1024) ? fileSize = fileTotal + " KB" : fileSize = (loaded / (1024*1024)).toFixed(2) + " MB";
+    let progressHTML = `<li class="row">
+                          <i class="fas fa-file-alt"></i>
+                          <div class="content">
+                            <div class="details">
+                              <span class="name">${name} • Uploading</span>
+                              <span class="percent">${fileLoaded}%</span>
+                            </div>
+                            <div class="progress-bar">
+                              <div class="progress" style="width: ${fileLoaded}%"></div>
+                            </div>
+                          </div>
+                        </li>`;
+    // uploadedArea.innerHTML = ""; //uncomment this line if you don't want to show upload history
+    uploadedArea.classList.add("onprogress");
+    progressArea.innerHTML = progressHTML;
+    if(loaded == total){
+      progressArea.innerHTML = "";
+      let uploadedHTML = `<li class="row">
+                            <div class="content upload">
+                              <i class="fas fa-file-alt"></i>
+                              <div class="details">
+                                <span class="name">${name} • Uploaded</span>
+                                <span class="size">${fileSize}</span>
+                              </div>
+                            </div>
+                            <i class="fas fa-check"></i>
+                          </li>`;
+      uploadedArea.classList.remove("onprogress");
+      // uploadedArea.innerHTML = uploadedHTML; //uncomment this line if you don't want to show upload history
+      uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML); //remove this line if you don't want to show upload history
+    }
+  });
+  let data = new FormData(form); //FormData is an object to easily send form data
+  xhr.send(data); //sending form data
+}
+
+
+  </script>
+  
+
+</body>
+
+</html>
