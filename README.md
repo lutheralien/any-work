@@ -6,6 +6,8 @@
 
 #import the an_work.sql file into your databse
 
+#change .env-example to .env, and add your own credentials
+
 #set up the connection to your databse
 
 Run npm start
