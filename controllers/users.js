@@ -280,6 +280,20 @@ if(photo.mimetype == "image/jpeg" ||photo.mimetype == "image/png"||photo.mimetyp
   }      
 
 }
+exports.getDeletePhotoLibraryWithID = async (req, res, next) => {
+  const sql = 'SELECT * FROM users WHERE user_id = ?';
+  const user = (await queryParamPromise(sql, [req.user]))[0];
+  
+  sql1= 'DELETE FROM photo_library WHERE photo_id = ? AND user_id = ?';
+  (await db.query(sql1, [req.params.id, user.user_id], (err, rows) => {
+    if (!err) {
+  req.flash('success_msg', 'Photo Deleted From Photo Library!');     
+  res.redirect('/users/dashboard');   
+}else {
+  console.log(err);
+}
+  }))
+}
 //Logout Route For Users
 exports.getUserLogOut = (req, res, next) => {
   res.cookie('jwt', '', {

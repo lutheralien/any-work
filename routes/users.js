@@ -30,6 +30,8 @@ router.get('/photo-library-update', requireAuth, usersController.getUpdatePhotoL
 router.get('/photo-library-update/:id', requireAuth, usersController.getUpdatePhotoLibraryWithID)
 //post update photo libary
 router.post('/photo-library-update/:id', requireAuth, usersController.postUpdatePhotoLibraryWithID)
+//post delete photo library with ID
+router.get('/photo-library-delete-with-id/:id', requireAuth, usersController.getDeletePhotoLibraryWithID)
 //user logout route
 router.get('/logout', requireAuth, usersController.getUserLogOut)
 //unauthorized route

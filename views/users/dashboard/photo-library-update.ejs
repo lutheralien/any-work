@@ -277,16 +277,12 @@ section .details span{
                 <div class="row">
                   <div class="col-lg-4">
                     <div class="card mb-4">
-                      <div class="card-body text-center">
-                          
-                       
-                        <a href="/users/photo-library-update/<%= data.photo_id %>"><img src="../../../dashboard_public/images/photo-library/<%= data.image_name %> " class="img-fluid" alt="avatar" ></a>
-                       
-
-
-                        
-
-                      </div>
+                      <div class="card-body text-center">                         
+                        <img src="../../../dashboard_public/images/photo-library/<%= data.image_name %> " class="img-fluid" alt="avatar">
+                        <br><br>
+                        <a href="/users/photo-library-update/<%= data.photo_id %>"  class="btn btn-success btn-rounded mb-4"><i class="fas fa-user-edit"></i></a>
+                        <a href="/users/photo-library-delete-with-id/<%= data.photo_id %>" onClick="return confirm('Are You Sure ?')" class="btn btn-danger btn-rounded mb-4" style="background-color: blue;"><i class="fas fa-user-minus"></i></a>
+                 </div>
                     </div>
                    
                   </div>
