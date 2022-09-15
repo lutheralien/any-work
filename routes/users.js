@@ -23,7 +23,13 @@ router.post('/profile-photo', requireAuth, usersController.postUpdateUserProfile
 //get photo library
 router.get('/photo-library', requireAuth, usersController.getPhotoLibrary)
 //post photo libary
-router.post('/photo-library', requireAuth, usersController.postUpdatePhotoLibrary)
+router.post('/photo-library', requireAuth, usersController.postPhotoLibrary)
+//get update photo library
+router.get('/photo-library-update', requireAuth, usersController.getUpdatePhotoLibrary)
+//edit page for photo
+router.get('/photo-library-update/:id', requireAuth, usersController.getUpdatePhotoLibraryWithID)
+//post update photo libary
+router.post('/photo-library-update/:id', requireAuth, usersController.postUpdatePhotoLibraryWithID)
 //user logout route
 router.get('/logout', requireAuth, usersController.getUserLogOut)
 //unauthorized route

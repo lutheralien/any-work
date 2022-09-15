@@ -10,7 +10,7 @@
   <meta name="author" content="">
 
 
-  <title>ANY WORK :: PHOTO LIBRARY</title>
+  <title>ANY WORK :: PHOTO LIBRARY UPDATE</title>
 
   <!-- Bootstrap core CSS-->
   <link href="../../../dashboard_public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -74,7 +74,7 @@ section .row{
   border-radius: 5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 section .row i{
   color: #6990F2;
@@ -172,14 +172,14 @@ section .details span{
           <span>Update Information</span>
         </a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/users/photo-library">
           <i class="fas fa-address-card"></i>
           <span>Photo Library</span>
         </a>
       </li> 
 
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="/users/photo-library-update">
           <i class="fas fa-address-card"></i>
           <span>Update Photo Library</span>
@@ -196,10 +196,12 @@ section .details span{
       <!-- Button trigger modal -->
      <%- include('../../Includes/messages.ejs') %>
 
- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Add To Photo Library</button>
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Add To Photo Library
+</button> -->
+
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -229,21 +231,19 @@ section .details span{
             <div class="card-header d-flex justify-content-between">
       
               
-              <h4>Photo Library</h4>
+              <h4>Transport System Images</h4>
 
+              <p>Add Exactly 5 photos</p>
 
       
               
             </div>
             <div class="card-body d-flex flex-wrap justify-content-start" id="container">
       
-              <form action="/users/photo-library" method="post" enctype="multipart/form-data">
+              <div id="preview_4">
                 
-                <input type="file" name="images" id="file-input_4" multiple>
-              
-                <input type="submit" class="btn btn-outline-primary"/>
-              </form>
-              
+               
+              </div>
               <strong>
                 Choose a specific number of photos to upload and click the submit Button To send the photos to Our Server!
               </strong>
@@ -258,17 +258,59 @@ section .details span{
       </div>
     </div>
   </div>
-</div> 
+</div> -->
 
 
 
+<%
+            if(userData.length!=0){
+            var i=1;
+            userData.forEach(function(data){
+            %>
+            <section style="background-color: #eee;">
+              <div class="container py-5">
+                <div class="row">
+                  <div class="col">
+                   
+                  </div>
+                </div>            
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="card mb-4">
+                      <div class="card-body text-center">
+                          
+                       
+                        <a href="/users/photo-library-update/<%= data.photo_id %>"><img src="../../../dashboard_public/images/photo-library/<%= data.image_name %> " class="img-fluid" alt="avatar" ></a>
+                       
+
+
+                        
+
+                      </div>
+                    </div>
+                   
+                  </div>
+                 
+                  
+                  
+                </div>
+              </div>
+            </section>
+
+            <%  i++; }) %>
+                    <% } else{ %>
+                        <tr>
+                            <h1 colspan="7" style="padding: 343px;">No Data Found</h1>
+                        </tr>
+                    <% } %>
+
+                    
                   
     </div>
     <!-- Sticky Footer -->
     <footer class="sticky-footer">
       <div class="container my-auto">
         <div class="copyright text-center my-auto">
-          <h4 style="color: red;">Warning: Upload at least two photos and photos should be less than 8</h4>
           <span>Copyright © My School 2022</span>
         </div>
       </div>
